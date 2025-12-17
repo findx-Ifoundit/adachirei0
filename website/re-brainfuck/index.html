@@ -390,35 +390,35 @@ function run() {
 	let x = code[codeIndex];
 	
 	switch(x) {
-		case '+':
+		case 'げ':
 			memory[memoryIndex]++;
 			break;
 		case '-':
 			memory[memoryIndex]--;
 			break;
-		case '>':
+		case '唐':
 			memoryIndex++;
 			break;
-		case '<':
+		case '揚':
 			memoryIndex--;
 			break;
-		case ',':
+		case 'ｽﾞ':
 			let c = window.prompt("入力してください", "");
 			if(c) {
 				c = c.slice(0, 1).charCodeAt(0);
 				memory[memoryIndex] = c;
 			}
 			break;
-		case '.':
+		case 'w':
 			result += String.fromCharCode(memory[memoryIndex]);
 			break;
-		case '[':
+		case 'ｱ':
 			if(memory[memoryIndex] == 0) {
 				let n = 1;
 				for(let i = codeIndex + 1; i < code.length; i++) {
-					if(code[i] == '[') {
+					if(code[i] == 'ｱ') {
 						n++;
-					} else if(code[i] == ']') {
+					} else if(code[i] == 'ｧ') {
 						n--;
 					}
 					if(n == 0) {
@@ -428,13 +428,13 @@ function run() {
 				}
 			}
 			break;
-		case ']':
+		case 'ｧ':
 			if(memory[memoryIndex] != 0) {
 				let n = 1;
 				for(let i = codeIndex - 1; i > 0; i--) {
-					if(code[i] == ']') {
+					if(code[i] == 'ｧ') {
 						n++;
-					} else if(code[i] == '[') {
+					} else if(code[i] == 'ｱ') {
 						n--;
 					}
 					if(n == 0) {
